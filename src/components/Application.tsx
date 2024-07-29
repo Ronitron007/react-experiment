@@ -109,6 +109,12 @@ const Application: React.FC = () => {
           >
             Decrement <span>{counter}</span>
           </button>
+          <MyButton
+            aFn={(name: string) => {
+              return `${name}: Bitch`;
+            }}
+            astring='haha'
+          />
           &nbsp;&nbsp; &nbsp;&nbsp;
           <button onClick={toggleTheme}>
             {darkTheme ? 'Light Theme' : 'Dark Theme'}
@@ -117,6 +123,14 @@ const Application: React.FC = () => {
       </div>
     </div>
   );
+};
+
+const MyButton: React.FC<{
+  aFn: (name: string) => string;
+  astring: string;
+}> = ({ aFn, astring }) => {
+  console.log(aFn('meehaw'));
+  return <button>HEE HAW</button>;
 };
 
 export default Application;

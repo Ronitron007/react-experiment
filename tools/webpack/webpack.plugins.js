@@ -4,6 +4,8 @@ const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+const ReactDocgenTypescriptPlugin =
+  require('react-docgen-typescript-plugin').default;
 
 module.exports = [
   new ForkTsCheckerWebpackPlugin(),
@@ -18,4 +20,5 @@ module.exports = [
     filename: '[name].[chunkhash].css',
     chunkFilename: '[name].[chunkhash].chunk.css',
   }),
+  new ReactDocgenTypescriptPlugin(),
 ].filter(Boolean);
